@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title>
+      <span style="color:#03A9F4">Cryptowatch</span><br />
+      <p style="font-size:10px;color:white">
+        developed by Hlapho Neo
+      </p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  >
+  <div >
+  <ion-list>
+    <ion-item>
+      <ion-label>Coin</ion-label>
+      <ion-select [(ngModel)]="activeCoin" (ionChange)="showCoin()">
+        <ion-option value="steem">Steem</ion-option>
+        <ion-option value="ripple">Ripple</ion-option>
+        <ion-option value="aeternity">Aeternity</ion-option>
+        <ion-option value="iota">Iota</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <h3 align="center">{{activeCoinValue}}</h3>
+
+<ion-card>
+  <ion-card-header>
+    {{cryptoMode}}
+  </ion-card-header>
+  <ion-card-content>
+    <canvas #lineCanvas></canvas>
+  </ion-card-content>
+</ion-card>
+</div>
+<hr />
+<div class="loader"></div>
+</ion-content>
